@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MTC Configuration",
+  "type": "object",
+  "properties": {
+    "mode": {
+      "type": "string",
+      "description": "Mode of operation.",
+      "enum": ["multiple", "merged"]
+    },
+    "sources": {
+      "type": "array",
+      "description": "List of sources",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "description": "Type of the source.",
+            "enum": ["FOLDER", "FILE", "MAVEN"]
+          },
+          "source": {
+            "type": "string",
+            "description": "Path to the source."
+          }
+        },
+        "required": ["source_type", "source"],
+        "additionalProperties": false
+      }
+    },
+    "output": {
+      "type": "string",
+      "description": "Path to the output file."
+    }
+  },
+  "required": ["mode", "sources", "output"],
+  "additionalProperties": false
+}
