@@ -16,7 +16,7 @@
           "mode": {
             "type": "string",
             "description": "Processing mode for the file.",
-            "enum": ["template", "ignore", "copy", "auto"]
+            "enum": ["template", "ignore", "copy", "auto", "foreach"]
           },
           "destinationName": {
             "type": "string",
