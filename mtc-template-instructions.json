@@ -36,6 +36,6 @@
       "description": "Path to the script to execute."
     }
   },
-  "required": ["files", "scriptPath"],
+  "required": [],
   "additionalProperties": false
 }
