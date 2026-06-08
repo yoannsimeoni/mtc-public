@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MTC Instructions",
+  "type": "object",
+  "properties": {
+    "files": {
+      "type": "array",
+      "description": "List of file instructions.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filePath": {
+            "type": "string",
+            "description": "Path to the source file."
+          },
+          "mode": {
+            "type": "string",
+            "description": "Processing mode for the file.",
+            "enum": ["template", "ignore", "copy", "auto"]
+          },
+          "destinationName": {
+            "type": "string",
+            "description": "Destination file name."
+          },
+          "modelInjection": {
+            "type": "string",
+            "description": "Model injection strategy or identifier."
+          }
+        },
+        "required": ["filePath", "mode", "destinationName", "modelInjection"],
+        "additionalProperties": false
+      }
+    },
+    "scriptPath": {
+      "type": "string",
+      "description": "Path to the script to execute."
+    }
+  },
+  "required": ["files", "scriptPath"],
+  "additionalProperties": false
+}
